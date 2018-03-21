@@ -223,6 +223,12 @@ class LocalBitcoin:
         
     def newInvoice(self, currency, amount, description):
         return self.sendRequest('/api/merchant/new_invoice/', {'currency': currency, 'amount': amount, 'description': description,}, 'post')
+    
+    def markIdentityVerified(self, contact_id):
+        return self.sendRequest('/api/contact_mark_identified/' + contact_id + '/', '', 'post')
+
+    def markRealName():
+        #/api/contact_mark_realname/{contact_id}/
 
     def sendRequest(self, endpoint, params, method):
 
