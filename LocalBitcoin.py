@@ -227,9 +227,11 @@ class LocalBitcoin:
     def markIdentityVerified(self, contact_id):
         return self.sendRequest('/api/contact_mark_identified/' + contact_id + '/', '', 'post')
 
-    def markRealName():
+    def getImage(self, contact_id):
         #/api/contact_mark_realname/{contact_id}/
-
+        return self.sendRequest('/api/contact_message_attachment/' + contact_id + '/123169108/', '', 'get')
+        #https://localbitcoins.com19848628/123169108/
+        
     def sendRequest(self, endpoint, params, method):
 
         params_encoded = ''
@@ -256,9 +258,9 @@ class LocalBitcoin:
             response = requests.post(self.baseurl + endpoint, headers = headers, data = params)
 
         if self.debug == True:
-            print( 'REQUEST: ' + self.baseurl + endpoint)
-            print( 'PARAMS: ' + str(params))
-            print( 'METHOD: ' + method)
-            print( 'RESPONSE: ' + response.text)
+            print 'REQUEST: ' + self.baseurl + endpoint
+            print 'PARAMS: ' + str(params)
+            print 'METHOD: ' + method
+            print 'RESPONSE: ' + response.text
 
         return json.loads(response.text)['data']
