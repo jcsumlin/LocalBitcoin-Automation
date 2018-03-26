@@ -10,6 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 What things you need to install the software and how to install them
+ - Python 2.7 (This app will not work with anything newer)
+ - Make sure all the files are in the same directory 
+ - 
 
 ```
 Give examples
